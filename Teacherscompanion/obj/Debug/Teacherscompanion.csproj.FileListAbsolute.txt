@@ -1,0 +1,27 @@
+c:\users\catalin\documents\visual studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Teacherscompanion.exe.config
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Teacherscompanion.exe
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Teacherscompanion.pdb
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\EntityFramework.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\EntityFramework.xml
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\obj\Debug\Teacherscompanion.csprojResolveAssemblyReference.cache
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\obj\Debug\Teacherscompanion.tc.resources
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\obj\Debug\Teacherscompanion.Properties.Resources.resources
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\obj\Debug\Teacherscompanion.csproj.GenerateResource.Cache
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\obj\Debug\Teacherscompanion.exe
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\obj\Debug\Teacherscompanion.pdb
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\obj\Debug\Teacherscompanion.csproj.ResolveComReference.cache
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\cvextern.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\msvcp140.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\opencv_ffmpeg310.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\vcruntime140.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Emgu.CV.UI.GL.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Emgu.CV.World.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\ZedGraph.dll
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Emgu.CV.UI.GL.xml
+C:\Users\Catalin\Documents\Visual Studio 2015\Projects\Teacherscompanion\Teacherscompanion\bin\Debug\Emgu.CV.World.xml
+C:\Users\Catalin\Source\Repos\TeachersCompanion\Teacherscompanion\bin\Debug\Teacherscompanion.exe.config
+C:\Users\Catalin\Source\Repos\TeachersCompanion\Teacherscompanion\obj\Debug\Teacherscompanion.csproj.ResolveComReference.cache
+C:\Users\Catalin\Source\Repos\TeachersCompanion\Teacherscompanion\obj\Debug\Teacherscompanion.exe
+C:\Users\Catalin\Source\Repos\TeachersCompanion\Teacherscompanion\obj\Debug\Teacherscompanion.pdb

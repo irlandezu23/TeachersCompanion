@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TCdbmodel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TCdbmodelStoreContainer">
+    <EntitySet Name="Classes" EntityType="TCdbmodel.Store.Classes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Students" EntityType="TCdbmodel.Store.Students" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sessions" EntityType="TCdbmodel.Store.Sessions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Logs" EntityType="TCdbmodel.Store.Logs" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ClassStudents" Association="TCdbmodel.Store.ClassStudents">
+      <End Role="Class" EntitySet="Classes" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="ClassesSessions" Association="TCdbmodel.Store.ClassesSessions">
+      <End Role="Classes" EntitySet="Classes" />
+      <End Role="Sessions" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="StudentsLogs" Association="TCdbmodel.Store.StudentsLogs">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Logs" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="SessionsLogs" Association="TCdbmodel.Store.SessionsLogs">
+      <End Role="Sessions" EntitySet="Sessions" />
+      <End Role="Logs" EntitySet="Logs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Classes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="RFid" />
+    </Key>
+    <Property Name="RFid" Type="int" Nullable="false" />
+    <Property Name="Firstname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClassId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sessions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="ClassesId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentsRFid" Type="int" Nullable="false" />
+    <Property Name="SessionsId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ClassStudents">
+    <End Role="Class" Type="TCdbmodel.Store.Classes" Multiplicity="1" />
+    <End Role="Students" Type="TCdbmodel.Store.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="ClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClassesSessions">
+    <End Role="Classes" Type="TCdbmodel.Store.Classes" Multiplicity="1" />
+    <End Role="Sessions" Type="TCdbmodel.Store.Sessions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sessions">
+        <PropertyRef Name="ClassesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentsLogs">
+    <End Role="Students" Type="TCdbmodel.Store.Students" Multiplicity="1" />
+    <End Role="Logs" Type="TCdbmodel.Store.Logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="RFid" />
+      </Principal>
+      <Dependent Role="Logs">
+        <PropertyRef Name="StudentsRFid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SessionsLogs">
+    <End Role="Sessions" Type="TCdbmodel.Store.Sessions" Multiplicity="1" />
+    <End Role="Logs" Type="TCdbmodel.Store.Logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sessions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Logs">
+        <PropertyRef Name="SessionsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TCdbmodel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="TCdbmodelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Classes" EntityType="TCdbmodel.Classes" />
+          <EntitySet Name="Students" EntityType="TCdbmodel.Students" />
+          <AssociationSet Name="ClassStudents" Association="TCdbmodel.ClassStudents">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <EntitySet Name="Sessions" EntityType="TCdbmodel.Sessions" />
+          <EntitySet Name="Logs" EntityType="TCdbmodel.Logs" />
+          <AssociationSet Name="ClassesSessions" Association="TCdbmodel.ClassesSessions">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Sessions" EntitySet="Sessions" />
+          </AssociationSet>
+          <AssociationSet Name="StudentsLogs" Association="TCdbmodel.StudentsLogs">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Logs" EntitySet="Logs" />
+          </AssociationSet>
+          <AssociationSet Name="SessionsLogs" Association="TCdbmodel.SessionsLogs">
+            <End Role="Sessions" EntitySet="Sessions" />
+            <End Role="Logs" EntitySet="Logs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Classes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <NavigationProperty Name="Students" Relationship="TCdbmodel.ClassStudents" FromRole="Class" ToRole="Students" />
+          <NavigationProperty Name="Sessions" Relationship="TCdbmodel.ClassesSessions" FromRole="Classes" ToRole="Sessions" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="RFid" />
+          </Key>
+          <Property Name="RFid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Firstname" Type="String" Nullable="false" />
+          <Property Name="Surname" Type="String" Nullable="false" />
+          <NavigationProperty Name="Class" Relationship="TCdbmodel.ClassStudents" FromRole="Students" ToRole="Class" />
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Logs" Relationship="TCdbmodel.StudentsLogs" FromRole="Students" ToRole="Logs" />
+        </EntityType>
+        <Association Name="ClassStudents">
+          <End Type="TCdbmodel.Classes" Role="Class" Multiplicity="1" />
+          <End Type="TCdbmodel.Students" Role="Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Sessions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Class" Relationship="TCdbmodel.ClassesSessions" FromRole="Sessions" ToRole="Classes" />
+          <Property Name="ClassesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Logs" Relationship="TCdbmodel.SessionsLogs" FromRole="Sessions" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Student" Relationship="TCdbmodel.StudentsLogs" FromRole="Logs" ToRole="Students" />
+          <Property Name="StudentsRFid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Session" Relationship="TCdbmodel.SessionsLogs" FromRole="Logs" ToRole="Sessions" />
+          <Property Name="SessionsId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ClassesSessions">
+          <End Type="TCdbmodel.Classes" Role="Classes" Multiplicity="1" />
+          <End Type="TCdbmodel.Sessions" Role="Sessions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sessions">
+              <PropertyRef Name="ClassesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StudentsLogs">
+          <End Type="TCdbmodel.Students" Role="Students" Multiplicity="1" />
+          <End Type="TCdbmodel.Logs" Role="Logs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="RFid" />
+            </Principal>
+            <Dependent Role="Logs">
+              <PropertyRef Name="StudentsRFid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SessionsLogs">
+          <End Type="TCdbmodel.Sessions" Role="Sessions" Multiplicity="1" />
+          <End Type="TCdbmodel.Logs" Role="Logs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sessions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Logs">
+              <PropertyRef Name="SessionsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TCdbmodelStoreContainer" CdmEntityContainer="TCdbmodelContainer">
+    <EntitySetMapping Name="Classes">
+      <EntityTypeMapping TypeName="IsTypeOf(TCdbmodel.Classes)">
+        <MappingFragment StoreEntitySet="Classes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="IsTypeOf(TCdbmodel.Students)">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="RFid" ColumnName="RFid" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sessions">
+      <EntityTypeMapping TypeName="IsTypeOf(TCdbmodel.Sessions)">
+        <MappingFragment StoreEntitySet="Sessions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ClassesId" ColumnName="ClassesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="IsTypeOf(TCdbmodel.Logs)">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StudentsRFid" ColumnName="StudentsRFid" />
+          <ScalarProperty Name="SessionsId" ColumnName="SessionsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
